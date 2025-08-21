@@ -19,9 +19,12 @@ class Connection:
         except PyMongoError as e:
             raise RuntimeError(f"MongoDB connection error: {e}")
 
+    def get_collection_as_list(self):
         try:
-            print(list(self.db[self.collection_name].find({}, {"_id": 0})))
+            return list(self.db[self.collection_name].find({}, {"_id": 0}))
         except PyMongoError as e:
-            print({"error": f"database_error: {e}"})
-c=Connection()
+            return {"error": f"database_error: {e}"}
+
+
+
 
