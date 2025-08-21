@@ -21,17 +21,17 @@ spec:
         - name: MONGODB_USER
           valueFrom:
             secretKeyRef:
-              name: secret
+              name: secrets
               key: mongo-username
         - name: MONGODB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: secret
+              name: secrets
               key: mongo-password
         - name: MONGODB_DATABASE
           valueFrom:
             secretKeyRef:
-              name: hostile-tweets-ex-secret
+              name: secrets
               key: mongo-database
         - name: MONGODB_COLLECTION
           valueFrom:
